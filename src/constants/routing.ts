@@ -13,6 +13,7 @@ import {
   DAI_ARBITRUM_ONE,
   DAI_OPTIMISM,
   DAI_POLYGON,
+  DAI_SEPOLIA,
   ETH2X_FLI,
   FEI,
   FRAX,
@@ -29,6 +30,7 @@ import {
   USDC_MAINNET,
   USDC_OPTIMISM,
   USDC_POLYGON,
+  USDC_SEPOLIA,
   USDT,
   USDT_ARBITRUM_ONE,
   USDT_OPTIMISM,
@@ -86,6 +88,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     WETH_POLYGON,
   ],
   [SupportedChainId.CELO]: [CUSD_CELO, CEUR_CELO, CMC02_CELO, PORTAL_USDC_CELO, PORTAL_ETH_CELO],
+  [SupportedChainId.SEPOLIA]: [...WRAPPED_NATIVE_CURRENCIES_ONLY[SupportedChainId.SEPOLIA], USDC_SEPOLIA, DAI_SEPOLIA],
 }
 export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: Token[] } } = {
   [SupportedChainId.MAINNET]: {

@@ -193,6 +193,8 @@ const BridgeLabel = ({ chainId }: { chainId: SupportedChainId }) => {
 }
 const ExplorerLabel = ({ chainId }: { chainId: SupportedChainId }) => {
   switch (chainId) {
+    case SupportedChainId.SEPOLIA:
+      return <Trans>Sepoliascan</Trans>
     case SupportedChainId.ARBITRUM_ONE:
     case SupportedChainId.ARBITRUM_RINKEBY:
       return <Trans>Arbiscan</Trans>
@@ -278,6 +280,7 @@ const NETWORK_SELECTOR_CHAINS = [
   SupportedChainId.OPTIMISM,
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.CELO,
+  SupportedChainId.SEPOLIA,
 ]
 
 export default function NetworkSelector() {

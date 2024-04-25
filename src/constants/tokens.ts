@@ -32,6 +32,13 @@ export const USDC_GOERLI = new Token(
   'USDC',
   'USD//C'
 )
+export const USDC_SEPOLIA = new Token(
+  SupportedChainId.SEPOLIA,
+  '0x09D52d76F4e9683186C00786574f8c20Ad3f18Ca',
+  6,
+  'USDC',
+  'USD//C'
+)
 export const USDC_KOVAN = new Token(
   SupportedChainId.KOVAN,
   '0x31eeb2d0f9b6fd8642914ab10f4dd473677d80df',
@@ -123,6 +130,13 @@ export const DAI_OPTIMISM = new Token(
   'DAI',
   'Dai stable coin'
 )
+export const DAI_SEPOLIA = new Token(
+  SupportedChainId.SEPOLIA,
+  '0xFF34B3d4Aee8ddCd6F9AFFFB6Fe49bD371b8a357',
+  18,
+  'DAI',
+  'Dai Stablecoin'
+)
 export const USDC: { [chainId in SupportedChainId]: Token } = {
   [SupportedChainId.MAINNET]: USDC_MAINNET,
   [SupportedChainId.ARBITRUM_ONE]: USDC_ARBITRUM,
@@ -137,6 +151,7 @@ export const USDC: { [chainId in SupportedChainId]: Token } = {
   [SupportedChainId.RINKEBY]: USDC_RINKEBY,
   [SupportedChainId.KOVAN]: USDC_KOVAN,
   [SupportedChainId.ROPSTEN]: USDC_ROPSTEN,
+  [SupportedChainId.SEPOLIA]: USDC_SEPOLIA,
 }
 export const DAI_POLYGON = new Token(
   SupportedChainId.POLYGON,
@@ -346,6 +361,13 @@ export const UNI: { [chainId: number]: Token } = {
 
 export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } = {
   ...(WETH9 as Record<SupportedChainId, Token>),
+  [SupportedChainId.SEPOLIA]: new Token(
+    SupportedChainId.SEPOLIA,
+    '0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
   [SupportedChainId.OPTIMISM]: new Token(
     SupportedChainId.OPTIMISM,
     '0x4200000000000000000000000000000000000006',
@@ -470,5 +492,6 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     [SupportedChainId.RINKEBY]: USDC_RINKEBY.address,
     [SupportedChainId.KOVAN]: USDC_KOVAN.address,
     [SupportedChainId.ROPSTEN]: USDC_ROPSTEN.address,
+    [SupportedChainId.SEPOLIA]: USDC_SEPOLIA.address,
   },
 }
